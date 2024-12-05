@@ -1,79 +1,99 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Dice Roller
     const diceButtons = document.querySelectorAll('.dice-roll');
+    const diceAnimation = document.getElementById('dice-animation');
     const resultDiv = document.getElementById('result');
 
-    // Dice roller functionality
     diceButtons.forEach(button => {
         button.addEventListener('click', function () {
             const diceType = this.getAttribute('data-dice');
-            const roll = rollDice(diceType);
-            resultDiv.innerText = `You rolled: ${roll}`;
+            rollDice(diceType);
         });
     });
 
     function rollDice(diceType) {
         const sides = parseInt(diceType.slice(1), 10);
-        return Math.floor(Math.random() * sides) + 1;
+
+        // Add rolling animation
+        diceAnimation.classList.add('rolling');
+        resultDiv.innerText = "Rolling...";
+
+        // Simulate dice roll after animation
+        setTimeout(() => {
+            const roll = Math.floor(Math.random() * sides) + 1;
+            resultDiv.innerText = `You rolled: ${roll}`;
+            diceAnimation.classList.remove('rolling');
+            diceAnimation.innerText = roll;
+        }, 1000);
     }
 
-    // Character Builder Navigation
-    document.getElementById("nextToStep2").addEventListener("click", () => {
-        document.getElementById("step1").style.display = "none";
-        document.getElementById("step2").style.display = "block";
+    // Character Builder Steps
+    const step1 = document.getElementById("step1");
+    const step2 = document.getElementById("step2");
+    const step3 = document.getElementById("step3");
+    const nextToStep2 = document.getElementById("nextToStep2");
+    const prevToStep1 = document.getElementById("prevToStep1");
+    const nextToStep3 = document.getElementById("nextToStep3");
+    const prevToStep2 = document.getElementById("prevToStep2");
+    const finishCharacter = document.getElementById("finishCharacter");
+    const restart = document.getElementById("restart");
+
+    nextToStep2.addEventListener("click", () => {
+        step1.style.display = "none";
+        step2.style.display = "block";
     });
 
-    document.getElementById("prevToStep1").addEventListener("click", () => {
-        document.getElementById("step2").style.display = "none";
-        document.getElementById("step1").style.display = "block";
+    prevToStep1.addEventListener("click", () => {
+        step2.style.display = "none";
+        step1.style.display = "block";
     });
 
-    document.getElementById("nextToStep3").addEventListener("click", () => {
-        document.getElementById("step2").style.display = "none";
-        document.getElementById("step3").style.display = "block";
+    nextToStep3.addEventListener("click", () => {
+        step2.style.display = "none";
+        step3.style.display = "block";
     });
 
-    document.getElementById("prevToStep2").addEventListener("click", () => {
-        document.getElementById("step3").style.display = "none";
-        document.getElementById("step2").style.display = "block";
+    prevToStep2.addEventListener("click", () => {
+        step3.style.display = "none";
+        step2.style.display = "block";
     });
 
-    document.getElementById("finishCharacter").addEventListener("click", () => {
-        const character = {
-            race: document.getElementById("raceSelect").value,
-            class: document.getElementById("classSelect").value,
-            abilities: {
-                strength: document.getElementById("strScore").value,
-                dexterity: document.getElementById("dexScore").value,
-                constitution: document.getElementById("conScore").value,
-                intelligence: document.getElementById("intScore").value,
-                wisdom: document.getElementById("wisScore").value,
-                charisma: document.getElementById("chaScore").value,
-            }
-        };
-        alert(`Character created: ${JSON.stringify(character, null, 2)}`);
+    finishCharacter.addEventListener("click", () => {
+        const race = document.getElementById("raceSelect").value;
+        const characterClass = document.getElementById("classSelect").value;
+        const str = document.getElementById("strScore").value;
+        const dex = document.getElementById("dexScore").value;
+        const con = document.getElementById("conScore").value;
+        const int = document.getElementById("intScore").value;
+        const wis = document.getElementById("wisScore").value;
+        const cha = document.getElementById("chaScore").value;
+
+        alert(`Character Complete!
+Race: ${race}
+Class: ${characterClass}
+Stats - STR: ${str}, DEX: ${dex}, CON: ${con}, INT: ${int}, WIS: ${wis}, CHA: ${cha}`);
     });
 
-    document.getElementById("restart").addEventListener("click", () => {
-        document.getElementById("step3").style.display = "none";
-        document.getElementById("step1").style.display = "block";
-        document.getElementById("raceSelect").value = "dragonborn";
-        document.getElementById("classSelect").value = "barbarian";
-        document.querySelectorAll("input[type='number']").forEach(input => input.value = "0");
-        alert("Character reset. Start again!");
+    restart.addEventListener("click", () => {
+        step1.style.display = "block";
+        step2.style.display = "none";
+        step3.style.display = "none";
     });
 
-    // Campaign Builder
-    document.getElementById('campaign-builder-btn').addEventListener('click', () => {
-        alert("Campaign builder coming soon!");
+    // Placeholder for other sections
+    const campaignBtn = document.getElementById('campaign-builder-btn');
+    const spellbookBtn = document.getElementById('spellbook-btn');
+    const itembookBtn = document.getElementById('itembook-btn');
+
+    campaignBtn.addEventListener('click', () => {
+        alert("Campaign Builder is under development!");
     });
 
-    // Spellbook
-    document.getElementById('spellbook-btn').addEventListener('click', () => {
-        alert("Spellbook functionality coming soon!");
+    spellbookBtn.addEventListener('click', () => {
+        alert("Spellbook is under development!");
     });
 
-    // Item Book
-    document.getElementById('itembook-btn').addEventListener('click', () => {
-        alert("Item book functionality coming soon!");
+    itembookBtn.addEventListener('click', () => {
+        alert("Item Book is under development!");
     });
 });
