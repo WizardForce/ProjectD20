@@ -1,0 +1,96 @@
+/* Add padding to the body for space around the edges */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px; /* Adds space around the content */
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+/* Header style */
+header {
+  background-color: #7b00ff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px; /* Add margin between header and first section */
+}
+
+/* Flexbox container for the character builder */
+#characterBuilder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-grow: 1;
+  margin-bottom: 20px; /* Space between character builder and other sections */
+}
+
+.step {
+  margin: 20px;
+  padding: 20px;
+  background-color: #7b00ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* Style for other sections like dice roller, campaign builder, etc. */
+section, .step {
+  margin: 20px 0; /* Space between sections */
+  padding: 20px;
+  background-color: #7b00ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* Button styles */
+button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff00d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+select, input[type="number"] {
+  padding: 8px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#result {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Ensure the other sections (campaign, spellbook, item book) behave correctly */
+#campaign-builder, #spellbook, #item-book {
+  margin-top: 20px;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #e6009c;
+}

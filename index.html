@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project D20</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Project D20</h1>
+    </header>
+    
+    <!-- Dice Roller -->
+    <section id="dice-roller">
+        <h2>Roll Dice</h2>
+        <button class="dice-roll" data-dice="d4">Roll d4</button>
+        <button class="dice-roll" data-dice="d6">Roll d6</button>
+        <button class="dice-roll" data-dice="d8">Roll d8</button>
+        <button class="dice-roll" data-dice="d10">Roll d10</button>
+        <button class="dice-roll" data-dice="d12">Roll d12</button>
+        <button class="dice-roll" data-dice="d20">Roll d20</button>
+        <div id="result"></div>
+    </section>
+
+<!-- Character Builder -->
+<div id="characterBuilder">
+    <div id="step1" class="step">
+      <h2>Select Race</h2>
+      <select id="raceSelect">
+        <option value="dragonborn">Dragonborn</option>
+        <option value="dwarf">Dwarf</option>
+        <option value="elf">Elf</option>
+        <option value="gnome">Gnome</option>
+        <option value="half-elf">Half-Elf</option>
+        <option value="half-orc">Half-Orc</option>
+        <option value="halfling">Halfling</option>
+        <option value="human">Human</option>
+        <option value="tiefling">Tiefling</option>
+      </select>
+      <button id="nextToStep2">Next</button>
+    </div>
+    <div id="step2" class="step" style="display:none;">
+      <h2>Select Class</h2>
+      <select id="classSelect">
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="cleric">Cleric</option>
+        <option value="druid">Druid</option>
+        <option value="fighter">Fighter</option>
+        <option value="monk">Monk</option>
+        <option value="paladin">Paladin</option>
+        <option value="ranger">Ranger</option>
+        <option value="rogue">Rogue</option>
+        <option value="sorcerer">Sorcerer</option>
+        <option value="warlock">Warlock</option>
+        <option value="wizard">Wizard</option>
+      </select>
+      <button id="prevToStep1">Back</button>
+      <button id="nextToStep3">Next</button>
+    </div>
+    <div id="step3" class="step" style="display:none;">
+      <h2>Distribute Ability Scores</h2>
+      <div>
+        <label>Strength:</label>
+        <input type="number" id="strScore" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label>Dexterity:</label>
+        <input type="number" id="dexScore" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label>Constitution:</label>
+        <input type="number" id="conScore" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label>Intelligence:</label>
+        <input type="number" id="intScore" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label>Wisdom:</label>
+        <input type="number" id="wisScore" min="0" max="20" value="0">
+      </div>
+      <div>
+        <label>Charisma:</label>
+        <input type="number" id="chaScore" min="0" max="20" value="0">
+      </div>
+      <button id="prevToStep2">Back</button>
+      <button id="finishCharacter">Finish</button>
+      <button id="restart">Restart</button>
+    </div>
+  </div>
+</div>
+ 
+
+    <!-- Campaign Builder -->
+    <section id="campaign-builder">
+        <h2>Campaign Builder</h2>
+        <button id="campaign-builder-btn">Start Campaign</button>
+    </section>
+
+    <!-- Spellbook -->
+    <section id="spellbook">
+        <h2>Spellbook</h2>
+        <button id="spellbook-btn">View Spells</button>
+    </section>
+
+    <!-- Item Book -->
+    <section id="item-book">
+        <h2>Item Book</h2>
+        <button id="itembook-btn">View Items</button>
+    </section>
+    <script src="/Users/weshanna/Documents/VSCode/ProjectD20/render.js"></script>
+  </div>
+</body>
+</html>
