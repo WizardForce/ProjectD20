@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project D20</title>
+    <title>ProjectD20</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Project D20</h1>
+        <h1>ProjectD20</h1>
     </header>
-
-    <!-- Dice Roller -->
-    <section id="dice-roller">
-        <h2>Roll Dice</h2>
-        <div id="dice-container">
-            <div id="dice-animation" class="dice">🎲</div>
-        </div>
-        <button class="dice-roll" data-dice="d4">Roll d4</button>
-        <button class="dice-roll" data-dice="d6">Roll d6</button>
-        <button class="dice-roll" data-dice="d8">Roll d8</button>
-        <button class="dice-roll" data-dice="d10">Roll d10</button>
-        <button class="dice-roll" data-dice="d12">Roll d12</button>
-        <button class="dice-roll" data-dice="d20">Roll d20</button>
-        <div id="result"></div>
-    </section>
+    
+ <!-- Dice Roller Section -->
+<section id="dice-roller">
+    <h2>Roll Dice</h2>
+    <div id="dice-container">
+        <div id="dice-animation" class="dice">🎲</div> <!-- Only one ID here -->
+    </div>
+    <button class="dice-roll" data-dice="d1">Roll d1</button>
+    <button class="dice-roll" data-dice="d4">Roll d4</button>
+    <button class="dice-roll" data-dice="d6">Roll d6</button>
+    <button class="dice-roll" data-dice="d8">Roll d8</button>
+    <button class="dice-roll" data-dice="d10">Roll d10</button>
+    <button class="dice-roll" data-dice="d12">Roll d12</button>
+    <button class="dice-roll" data-dice="d20">Roll d20</button>
+    <button class="dice-roll" data-dice="d100">Roll d100</button>
+    <button class="dice-roll" data-dice="d200">Roll d200</button>
+<button class="dice-roll" data-dice="d500">Roll d500</button>
+<button class="dice-roll" data-dice="d1000">Roll d1000</button>
+    <div id="result"></div>
+</section>
 
     <!-- Character Builder -->
     <div id="characterBuilder">
@@ -112,6 +117,6 @@
         <button id="itembook-btn">View Items</button>
     </section>
 
-    <script src="/Users/weshanna/Documents/VSCode/ProjectD20/render.js"></script>
+    <script src="render.js"></script>
 </body>
 </html>
